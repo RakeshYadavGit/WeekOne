@@ -55,8 +55,7 @@ class Rectangle1 {
     lazy var area: Double = {
         return width * height
         // The area property is a lazy property because the calculation of the area
-        // is deferred until the property is accessed for the first time. The closure
-        // used for initialization is only executed once.
+        // is deferred until the property is accessed for the first time.
     }()
 }
 

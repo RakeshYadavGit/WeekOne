@@ -17,7 +17,7 @@ class Residence {
     
     func printAddress() {
         if let address = address {
-            print(address.fullAddress())       // Printing the full address if it exists
+            print("Full Address is: \(address.fullAddress())")       // Printing the full address if it exists
         } else {
             print("No address available")       // Printing a message if the address is nil
         }
@@ -33,19 +33,21 @@ struct Address {
     }
 }
 
-//let address = Address(street: "123 Main St", city: "New York")
-//let residence = Residence()
-//residence.address = address
+let address = Address(street: "123 Main St", city: "New York")
+let residence = Residence()
+residence.address = address
 
 let person = Person(name: "Rakesh")    // Creating a person instance with the name "Rakesh"
 
+//person.residence = residence
+
 // Accessing an optional property using optional chaining
-let address = person.residence?.address    // Optional chaining to access the address property
+let address1 = person.residence?.address    // Optional chaining to access the address property
 
 // Calling a method using optional chaining
 person.residence?.printAddress()           // Optional chaining to call the printAddress() method
 
-print(address as Any)
+print(address1 as Any)
 
 //output: nil
 

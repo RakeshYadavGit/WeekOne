@@ -84,6 +84,10 @@ private class MyPrivateClass {
 
 
 // Example usage
+
+let myOpen = OpenClass()
+myOpen.openProperty = "Hello World"
+myOpen.openMethod()
 let myObject = MyClass()
 myObject.publicProperty = 10 // Accessible because MyClass and publicProperty are public
 myObject.publicMethod() // Accessible because MyClass and publicMethod are public
@@ -92,7 +96,7 @@ var myStruct = MyStruct()
 myStruct.internalProperty = "Internal" // Accessible because MyStruct and internalProperty are internal
 myStruct.internalMethod() // Accessible because MyStruct and internalMethod are internal
 
-fileprivate let privateObject = PrivateClass() // Create instance of PrivateClass
+private let privateObject = PrivateClass() // Create instance of PrivateClass
 privateObject.privateProperty = 3.14 // Access and modify private property
 privateObject.privateMethod() // Call private method
 

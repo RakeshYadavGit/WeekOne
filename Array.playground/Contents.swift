@@ -1,12 +1,42 @@
 // Creating an array of integers
-var numbers = [1, 2, 3, 4, 5]
+var numbers:[Int] = [1, 2, 6, 3, 4, 5]
+
+//cheching type of the array
+print(type(of: numbers))
+
 print("numbers: \(numbers)")
+
+//sort the existing array
+numbers.sort()
+
+print("numbers array after sorting \(numbers)")
+
 // Accessing elements in an array
 let firstElement = numbers[0] // Accessing the first element
 let lastElement = numbers[numbers.count - 1] // Accessing the last element
-
 print("First Element: \(firstElement)")
 print("Last Element: \(lastElement)")
+
+print("First element using first is \(numbers.first!)")
+print("Last element using last is \(numbers.last!)")
+
+// using first where we can get the first element based on the condtion
+//But output of the this optional value. So we need to handle the case
+//It start iterating element from the first index to last index of the array.
+if let firstEvenNumber = numbers.first(where: {$0 % 2 == 0}){
+    print("The first even numbers is: \(firstEvenNumber)")
+}
+else{
+    print("There is no even number")
+}
+
+//same logic is goes for last where but it iterating from last to first index.
+if let lastEvenNumber = numbers.last(where: {$0 % 2 == 0}){
+    print("The last even number is \(lastEvenNumber)")
+}
+else{
+    print("There is no odd numbers")
+}
 
 // Modifying elements in an array
 numbers[2] = 10 // Modifying the element at index 2
@@ -14,6 +44,7 @@ numbers[2] = 10 // Modifying the element at index 2
 // Appending elements to an array
 numbers.append(6) // Appending a new element to the end of the array
 
+print("numbers array after append action \(numbers)")
 // Inserting an element at a specific index
 numbers.insert(7, at: 3) // Inserting 7 at index 3
 print("numbers after inserting 7 at 3 \(numbers)")
@@ -64,3 +95,18 @@ print("Total Number of elements in array \(numbers.count)")
 
 print("Array is empty: \(numbers.isEmpty)")
 
+//copy of array is created when we assign array variable into anyother variable
+//so when we do any modification in any array variable. The changes is not going to reflect in both the variable beacuse both variable using the different 
+var numberCopy = numbers
+numberCopy.append(20)
+print("Numbers array: \(numbers)")
+print("NumberCopy array: \(numberCopy)")
+
+//Check the capacity of the aaray
+print("Array capacity \(numbers.capacity)")
+
+numbers.append(contentsOf: [7,8,9,10,11,12,13])
+print("Array capasity \(numbers)")
+
+print("Start index of the array: \(numberCopy.startIndex)")
+print("End index of the array: \(numberCopy.endIndex)")
